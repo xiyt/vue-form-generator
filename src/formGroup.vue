@@ -6,6 +6,9 @@
 				<i class="icon"></i>
 				<div class="helpText" v-html='field.help'></div>
 			</span>
+      <span v-if='field.doc' class="help field-doc-icon" @click="onHelpClick(field)">
+				<i class="icon"></i>
+			</span>
 		</label>
 
 		<div class="field-wrap">
@@ -106,6 +109,9 @@ export default {
 		},
 		onModelUpdated(newVal, schema) {
 			this.$emit("model-updated", newVal, schema);
+		},
+		onHelpClick(field) {
+			this.$emit("help-click", this.vfg, field);
 		},
 		validate(calledParent) {
 			return this.$refs.child.validate(calledParent);

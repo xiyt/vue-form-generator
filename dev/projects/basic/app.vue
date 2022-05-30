@@ -3,7 +3,7 @@
 		<h1>Basic</h1>
 		<div class="row">
 			<div class="col-sm-12">
-				<vue-form-generator :schema="schema" :model="model" :options="formOptions" ref="form" :is-new-model="isNewModel" @model-updated="modelUpdated" @validated="onValidated"></vue-form-generator>
+				<vue-form-generator :schema="schema" :model="model" :options="formOptions" ref="form" :is-new-model="isNewModel" @model-updated="modelUpdated" @help-click="onHelpClick" @validated="onValidated"></vue-form-generator>
 			</div>
 		</div>
 		<div class="row">
@@ -38,6 +38,7 @@ export default {
 						type: "input",
 						inputType: "text",
 						label: "First Name",
+						doc: "111111",
 						model: "first_name",
 						attributes: {
 							input: {
@@ -52,6 +53,7 @@ export default {
 						type: "checkbox",
 						label: "Active",
 						model: "status",
+						help: "2234",
 						attributes: {
 							input: {
 								"data-toggle": "tooltip"
@@ -110,6 +112,10 @@ export default {
 
 		modelUpdated(newVal, schema) {
 			console.log("main model has updated", newVal, schema);
+		},
+
+		onHelpClick(vfg, field) {
+			console.log("onHelpClick", vfg, field);
 		}
 	},
 
