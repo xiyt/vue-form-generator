@@ -6,8 +6,8 @@
 				<i class="icon"></i>
 				<div class="helpText" v-html='field.help'></div>
 			</span>
-      <span v-if='field.doc' class="help field-doc-icon" @click="onHelpClick(field)">
-				<i class="icon"></i>
+      <span v-if='field.doc' class="field-doc-icon" @click="onHelpClick(field)">
+				<i class="el-icon-info"></i>
 			</span>
 		</label>
 
