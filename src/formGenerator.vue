@@ -151,7 +151,7 @@ export default {
 		},
 
 		onModelUpdated(newVal, schema) {
-			this.$emit("model-updated", newVal, schema);
+			this.$emit("model-updated", newVal, this.model, schema);
 		},
 
 		onHelpClick(vfg, field) {
